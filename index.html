@@ -848,19 +848,19 @@
             <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
               <div class="card-body p-4 p-lg-5">
 
-                <form action="forms/contact.php" method="post" class="php-email-form">
+                <form id="contact-form" class="php-email-form" novalidate>
                   <div class="row gy-4">
 
                     <div class="col-12">
-                      <input type="text" name="name" class="form-control" placeholder="Your Name" required="" disabled="">
+                      <input type="text" name="name" id="cf-name" class="form-control" placeholder="Your Name" required="">
                     </div>
 
                     <div class="col-12 ">
-                      <input type="email" class="form-control" name="email" placeholder="Your Email" required="" disabled="">
+                      <input type="email" class="form-control" name="email" id="cf-email" placeholder="Your Email" required="">
                     </div>
 
                     <div class="col-12">
-                      <select class="form-control" name="country" required="" disabled="">
+                      <select class="form-control" name="country" id="cf-country" required="">
                         <option value="" disabled selected>Target Country ▼</option>
                         <option>Kenya</option>
                         <option>Tanzania</option>
@@ -872,7 +872,7 @@
                     </div>
 
                     <div class="col-12">
-                      <select class="form-control" name="service" required="" disabled="">
+                      <select class="form-control" name="service" id="cf-service" required="">
                         <option value="" disabled selected>Service Needed ▼</option>
                         <option>Company Formation</option>
                         <option>Market Entry Strategy</option>
@@ -884,7 +884,7 @@
                     </div>
 
                     <div class="col-12">
-                      <textarea class="form-control" name="message" rows="5" placeholder="Message" disabled=""></textarea>
+                      <textarea class="form-control" name="message" id="cf-message" rows="5" placeholder="Message" required=""></textarea>
                     </div>
 
                     <div class="col-12 text-center">
@@ -892,7 +892,7 @@
                       <div class="error-message"></div>
                       <div class="sent-message">Your enquiry has been sent. We'll respond within 24 hours!</div>
 
-                      <button type="submit" class="btn btn-submit w-100" disabled="">SEND ENQUIRY →</button>
+                      <button type="submit" class="btn btn-submit w-100">SEND ENQUIRY →</button>
                     </div>
 
                   </div>
@@ -959,6 +959,12 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Contact Form Handler -->
+  <script src="assets/js/contact-form.js"></script>
 
 </body>
 
