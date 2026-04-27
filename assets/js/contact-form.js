@@ -4,7 +4,7 @@
   /* ─── YOUR EMAILJS CREDENTIALS ─────────────────────────────────────────── */
   /* Sign up free at https://www.emailjs.com                                  */
   /* Connect girish.eaventures@gmail.com as the Gmail service                 */
-  const EMAILJS_PUBLIC_KEY  = 'CAO5mfKcsrfmG1v7g0TbV';
+  const EMAILJS_PUBLIC_KEY  = 'lmGeIihSu3bMa4D-7';
   const EMAILJS_SERVICE_ID  = 'service_e4p4g9v';
   const EMAILJS_TEMPLATE_ID = 'template_i3uizcm';
   /* ──────────────────────────────────────────────────────────────────────── */
