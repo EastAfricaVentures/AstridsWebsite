@@ -4,9 +4,9 @@
   /* ─── YOUR EMAILJS CREDENTIALS ─────────────────────────────────────────── */
   /* Sign up free at https://www.emailjs.com                                  */
   /* Connect girish.eaventures@gmail.com as the Gmail service                 */
-  const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
-  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+  const EMAILJS_PUBLIC_KEY  = 'CAO5mfKcsrfmG1v7g0TbV';
+  const EMAILJS_SERVICE_ID  = 'service_e4p4g9v';
+  const EMAILJS_TEMPLATE_ID = '4st8n2m';
   /* ──────────────────────────────────────────────────────────────────────── */
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
@@ -42,12 +42,11 @@
     submitBtn.disabled = true;
 
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      from_name:  name,
-      from_email: email,
-      country:    country,
-      service:    service,
-      message:    message,
-      to_email:   'girish.eaventures@gmail.com'
+      name:    name,
+      email:   email,
+      country: country,
+      service: service,
+      message: message
     })
       .then(function () {
         showState('success');
