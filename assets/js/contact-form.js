@@ -6,7 +6,7 @@
   /* Connect girish.eaventures@gmail.com as the Gmail service                 */
   const EMAILJS_PUBLIC_KEY  = 'CAO5mfKcsrfmG1v7g0TbV';
   const EMAILJS_SERVICE_ID  = 'service_e4p4g9v';
-  const EMAILJS_TEMPLATE_ID = '4st8n2m';
+  const EMAILJS_TEMPLATE_ID = 'template_4st8n2m';
   /* ──────────────────────────────────────────────────────────────────────── */
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
