@@ -1661,6 +1661,65 @@ section,
   transform: translateY(0);
 }
 
+.contact .contact-form .btn-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+  transform: none;
+}
+
+.contact .contact-form .loading,
+.contact .contact-form .error-message,
+.contact .contact-form .sent-message {
+  display: none;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+.contact .contact-form .error-message {
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+}
+
+.contact .contact-form .sent-message {
+  background: #059652;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact-confetti {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+}
+
+.contact-confetti-piece {
+  animation-name: contact-confetti-fall;
+  animation-timing-function: cubic-bezier(0.15, 0.7, 0.35, 1);
+  display: block;
+  height: 12px;
+  opacity: 0;
+  position: absolute;
+  top: -16px;
+  width: 8px;
+}
+
+@keyframes contact-confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 105vh, 0) rotate(720deg);
+  }
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/

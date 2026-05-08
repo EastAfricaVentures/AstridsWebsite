@@ -9,6 +9,7 @@ define('SMTP_PASS',     'lgacjceanwtnwhxu');   // 16-char App Password
 define('SMTP_FROM',     'girish.eaventures@gmail.com');
 define('SMTP_FROM_NAME','ASTRIDS Enquiry');
 define('MAIL_TO',       'girish.eaventures@gmail.com');
+$mailCc = array('saninfo3@gmail.com', 'info@eastafricaventures.com');
 /* ──────────────────────────────────────────────────────────────────────────── */
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -61,6 +62,9 @@ if (file_exists($phpmailerPath)) {
 
         $mail->setFrom(SMTP_FROM, SMTP_FROM_NAME);
         $mail->addAddress(MAIL_TO);
+        foreach ($mailCc as $ccEmail) {
+            $mail->addCC($ccEmail);
+        }
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
