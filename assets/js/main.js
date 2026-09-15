@@ -9,6 +9,23 @@
 (function() {
   "use strict";
 
+  function mountFloatingContact() {
+    if (!document.body || document.querySelector('.floating-contact')) return;
+    const floatingContact = document.createElement('a');
+    floatingContact.className = 'floating-contact';
+    floatingContact.href = /(^|\/)index\.html$/.test(window.location.pathname) || window.location.pathname.endsWith('/') ? '#contact' : 'contact.html';
+    floatingContact.innerHTML = '<i class="bi bi-chat-dots" aria-hidden="true"></i><span>Contact Us</span>';
+    floatingContact.setAttribute('aria-label', 'Contact East Africa Ventures');
+    document.body.appendChild(floatingContact);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountFloatingContact, { once: true });
+  } else {
+    mountFloatingContact();
+  }
+  window.addEventListener('load', mountFloatingContact, { once: true });
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
