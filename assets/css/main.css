@@ -2168,6 +2168,25 @@ body:has(.page-title) main > .section .row > [class*="col-"] {
   box-shadow: 0 10px 28px rgba(26, 61, 30, 0.06);
 }
 
+body:has(.page-title) main > .section .row.gy-4 {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+body:has(.page-title) main > .section .row.gy-4 > [class*="col-"] {
+  border-radius: 0;
+}
+
+body:has(.page-title) main > .section .row.gy-4 > [class*="col-"]:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+body:has(.page-title) main > .section .row.gy-4 > [class*="col-"]:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
 body:has(.page-title) main > .section .row > [class*="col-"] h2 {
   font-size: 1.45rem;
 }
