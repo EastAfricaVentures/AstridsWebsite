@@ -1,0 +1,89 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about {
+  .about-image {
+    position: relative;
+
+    img {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .about-content {
+    padding-left: 2rem;
+
+    @media (max-width: 991.98px) {
+      padding-left: 0;
+      margin-top: 3rem;
+    }
+
+    .subtitle {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: color-mix(in srgb, var(--default-color), transparent 25%);
+    }
+  }
+
+  .personal-info {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .label {
+        font-size: 0.875rem;
+        color: color-mix(in srgb, var(--default-color), transparent 40%);
+      }
+
+      .value {
+        font-weight: 600;
+        color: var(--heading-color);
+      }
+    }
+  }
+
+  .signature {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .signature-image {
+      max-width: 150px;
+    }
+
+    .signature-info {
+      h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        color: color-mix(in srgb, var(--default-color), transparent 40%);
+        margin: 0;
+      }
+    }
+  }
+}
