@@ -61,6 +61,8 @@
 :root { --heading-color: #1B5E20; --accent-color: #1B5E20; --nav-hover-color: #1B5E20; --nav-dropdown-hover-color: #1B5E20; }
 .header-contact a:not(.btn) { color: var(--heading-color); font-size: 13px; font-weight: 600; white-space: nowrap; }
 .header .header-social-links > a[aria-label$="phone"] { font-size: 13px; font-weight: 500; white-space: nowrap; }
+.header .header-social-links { display: flex; align-items: center; gap: 12px; }
+.header .header-social-links .header-phone { color: #6f7378; font-size: 14px; font-weight: 500; white-space: nowrap; padding-left: 0; }
 .hero h1 { font-size: clamp(2.5rem, 5vw, 4.7rem); line-height: 1.05; }
 .hero h1 span, .section-category, .closing-line a { color: #1B5E20; }
 .hero-logo { max-width: 330px; width: 100%; }
@@ -75,6 +77,7 @@
 .closing-line { background: #f6f4ea; }
 @media (max-width: 1199px) { .header-contact { display: none !important; } }
 @media (max-width: 1199px) { .header .header-social-links > a[aria-label$="phone"] { display: none; } }
+@media (max-width: 1199px) { .header .header-social-links .header-phone { display: none; } }
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
