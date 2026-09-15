@@ -2096,7 +2096,7 @@ body:has(.page-title) {
 
 body:has(.page-title) .page-title {
   position: relative;
-  padding: 86px 0 68px;
+  padding: 54px 0 42px;
   background: linear-gradient(135deg, #f4f8f1 0%, #fbfcfa 72%);
   border-bottom: 1px solid rgba(27, 94, 32, 0.1);
   overflow: hidden;
@@ -2118,7 +2118,7 @@ body:has(.page-title) .page-title h1 {
   z-index: 1;
   margin-bottom: 12px;
   color: #1b5e20;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
   letter-spacing: -0.02em;
 }
 
@@ -2132,7 +2132,7 @@ body:has(.page-title) .page-title p {
 }
 
 body:has(.page-title) main > .section {
-  padding: 76px 0;
+  padding: 58px 0;
 }
 
 body:has(.page-title) main > .section:nth-child(even) {
@@ -2159,8 +2159,10 @@ body:has(.page-title) main > .section li {
 }
 
 body:has(.page-title) main > .section .row > [class*="col-"] {
-  padding: 28px;
+  position: relative;
+  padding: 26px 28px 24px;
   border: 1px solid rgba(27, 94, 32, 0.1);
+  border-top: 3px solid rgba(201, 164, 78, 0.72);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 10px 28px rgba(26, 61, 30, 0.06);
@@ -2168,6 +2170,15 @@ body:has(.page-title) main > .section .row > [class*="col-"] {
 
 body:has(.page-title) main > .section .row > [class*="col-"] h2 {
   font-size: 1.45rem;
+}
+
+body:has(.page-title) main > .section .row > [class*="col-"] p:last-child {
+  margin-bottom: 0;
+}
+
+body:has(.page-title) main > .section > .container > h2:first-child {
+  max-width: 780px;
+  margin-bottom: 26px;
 }
 
 body:has(.page-title) .contact-form {
@@ -2195,11 +2206,11 @@ body:has(.page-title) .table tbody td {
 
 @media (max-width: 767px) {
   body:has(.page-title) .page-title {
-    padding: 66px 0 50px;
+    padding: 46px 0 34px;
   }
 
   body:has(.page-title) main > .section {
-    padding: 54px 0;
+    padding: 44px 0;
   }
 
   body:has(.page-title) main > .section .row > [class*="col-"] {
