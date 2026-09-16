@@ -9,6 +9,57 @@
 (function() {
   "use strict";
 
+  const pageSlug = (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '');
+  document.body.classList.add(`page-${pageSlug}`);
+
+  function normalizePrimaryNavigation() {
+    const menu = document.querySelector('#navmenu > ul');
+    if (!menu) return;
+    const order = new Map([
+      ['home', 1],
+      ['about us', 2],
+      ['services', 3],
+      ['countries', 4],
+      ['contact', 5]
+    ]);
+    Array.from(menu.children)
+      .filter(item => item.tagName === 'LI')
+      .sort((a, b) => {
+        const aLabel = a.querySelector(':scope > a')?.textContent.trim().toLowerCase() || '';
+        const bLabel = b.querySelector(':scope > a')?.textContent.trim().toLowerCase() || '';
+        return (order.get(aLabel) || 99) - (order.get(bLabel) || 99);
+      })
+      .forEach(item => menu.appendChild(item));
+  }
+
+  normalizePrimaryNavigation();
+
+  function normalizeFooter() {
+    const footer = document.querySelector('#footer');
+    if (!footer) return;
+    const year = new Date().getFullYear();
+    footer.innerHTML = `
+      <div class="container">
+        <div class="text-center mb-2">
+          <img src="assets/img/east-africa-ventures-logo.png" alt="East Africa Ventures footprint logo" class="footer-logo">
+          <span class="footer-tagline">Market entry and ground execution in East Africa</span>
+          <p><a href="tel:+917899141276">India: +91 78991 41276</a> | <a href="tel:+256755131313">Uganda: +256 755131313</a> | <a href="mailto:info@eastafricaventures.com">info@eastafricaventures.com</a></p>
+          <p>Kenya | Tanzania | Uganda | Ethiopia</p>
+        </div>
+        <div class="social-links d-flex justify-content-center mb-3">
+          <a href="https://wa.me/917899141276" title="WhatsApp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/company/eastafricaventures/" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <hr class="footer-divider">
+        <div class="copyright text-center">
+          <p>© ${year} <strong>East Africa Ventures</strong>. All Rights Reserved.</p>
+          <p class="designed-by">Designed &amp; Developed by <a href="https://www.adyapragnya.com/" target="_blank" rel="noopener">Adyapragnya Technologies</a></p>
+        </div>
+      </div>`;
+  }
+
+  normalizeFooter();
+
   function mountFloatingContact() {
     if (!document.body || document.querySelector('.floating-contact')) return;
     const floatingContact = document.createElement('a');
@@ -104,6 +155,7 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return;
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -117,7 +169,7 @@
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
+  if (typeof Waypoint !== 'undefined') skillsAnimation.forEach((item) => {
     new Waypoint({
       element: item,
       offset: '80%',
@@ -133,14 +185,15 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({ selector: '.glightbox' });
+  }
 
   /**
    * Init isotope layout and filters
    */
   document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+    if (typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined') return;
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
@@ -174,6 +227,7 @@
    * Init swiper sliders
    */
   function initSwiper() {
+    if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()

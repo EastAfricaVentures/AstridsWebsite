@@ -239,18 +239,26 @@
   <footer id="footer" class="footer">
 
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">East Africa Ventures</strong> <span>All Rights Reserved</span></p>
+      <div class="text-center mb-2">
+        <img src="assets/img/east-africa-ventures-logo.png" alt="East Africa Ventures footprint logo" class="footer-logo">
+        <span class="footer-tagline">Market entry and ground execution in East Africa</span>
+        <p><a href="tel:+917899141276">India: +91 78991 41276</a> | <a href="tel:+256755131313">Uganda: +256 755131313</a> | <a href="mailto:info@eastafricaventures.com">info@eastafricaventures.com</a></p>
+        <p>Kenya | Tanzania | Uganda | Ethiopia</p>
       </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+      <div class="social-links d-flex justify-content-center mb-3">
+        <a href="https://wa.me/917899141276" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/company/eastafricaventures/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <hr class="footer-divider">
+      <div class="copyright text-center">
+        <p>© <span id="footer-year"></span> <strong>East Africa Ventures</strong>. All Rights Reserved.</p>
+        <p class="designed-by">Designed &amp; Developed by <a href="https://www.adyapragnya.com/" target="_blank" rel="noopener">Adyapragnya Technologies</a></p>
       </div>
     </div>
 
   </footer>
+
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
