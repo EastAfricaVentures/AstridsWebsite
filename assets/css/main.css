@@ -44,6 +44,11 @@
   --surface-color: #ffffff;
 }
 
+.buyer-verification-section { border-top: 3px solid #c9a44e; }
+.buyer-verification-copy { max-width: 900px; margin: 0 auto; }
+.buyer-verification-copy .lead { font-weight: 600; color: #173d1b; }
+.featured-service { border: 2px solid #c9a44e; background: #fffdf5; }
+
 .dark-background {
   --background-color: #060606;
   --default-color: #ffffff;
